@@ -1,0 +1,133 @@
+@use "variable" as var;
+
+.Header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: var.$white;
+    z-index: 1100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // -webkit-box-pack: justify; //-webkit…SaFariやChromrでの対応,//justify…余ったスペースは各子の間に均等に分割
+
+    
+.Header__title{
+    margin: 0 0 0 21px;
+    width: 160px;
+   
+    p{
+        margin-bottom: 0;
+        // margin-block-start:1rem; //要素内の開始位置（縦）、テキストに対する相対値
+        // margin-block-end: 1em;
+        // margin-inline-start: 0px;  //要素の開始位置（横）
+        // margin-inline-end: 0px;
+
+        a{
+            :visited{
+                color: var.$bule;
+                text-decoration: none;
+            }
+            line-height: 1.3;
+            font-weight: 900;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            // -webkit-box-align: center;  
+            // overflow-clip-margin: content-box; //はみ出る部分が切り取られる
+            span{
+                margin-left: 16px;
+                color: var.$font;
+                white-space: nowrap; //自動改行しない
+                // font-size: 1.4rem;
+                font-size: 14px;
+            }
+        }
+        img{
+            height: 33px;
+            width: auto;
+        }
+
+        strong{
+            font-size: 18px;
+            font-weight: bolder;
+        }
+    }   
+} 
+}
+
+.Nav{
+    font-weight: 700;
+    &__btn{
+        margin-bottom: 0;
+        display: none;
+       
+    }
+    &__body{
+        display: flex;
+       
+    }
+}
+
+.menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+
+    &-item{
+        display: block;
+        position: relative;
+        white-space: nowrap;
+        a{
+            display: flex;
+            padding: 0 15px;
+            height: 70px;
+            color: var.$font;
+            align-items: center;
+            transition: 0.3s;
+            &:hover{
+                color: var.$font;
+                background-color: var.$hover;
+                text-decoration: none;
+                
+            }
+        }
+    }
+}
+ 
+.sub-menu{
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1000;
+
+    li{
+        font-weight: normal;
+        background-color: var.$hover-light;
+        a{
+            &.menu-ttl{
+                position: relative;
+                padding: 15px 60px 15px 15px;
+                height: auto;
+            }
+            &:hover{
+                color: var.$light-bule;
+                background-color: var.$white;
+                text-decoration: none;
+            }
+
+        }
+    }
+}
+
+.menu-item.Nav__special{
+    background-color: var.$light-bule;
+    a{
+        color: var.$white;
+        &:hover{
+            background-color: var.$light-bule;
+        }
+    }
+}

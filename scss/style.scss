@@ -1,0 +1,43 @@
+@use "variable";
+@use "header";
+@use "tophead";
+@use "responsive";
+
+
+
+body{
+    font-family:"Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif ;
+    line-height:1.7 ;
+    // font-size: 1.6rem;
+    color: #121212;
+    -webkit-text-size-adjust: 100%; //縦・横向きでも文字サイズを自動
+}
+
+
+//共通
+a{text-decoration: none;}
+img{
+    vertical-align: middle;
+    border-style: none;
+}
+
+p.Btn{
+
+    line-height: 1;
+    display: inline-block;
+}
+.Btn a{
+    border-radius: 4px;
+    display: block;
+    font-weight: 700;
+    border: solid 1px ;
+}
+.Btn.Btn--big a{
+    padding: 20px 38px;
+}
+
+
+
+
+
+

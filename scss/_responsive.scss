@@ -1,0 +1,285 @@
+@use "variable" as var;
+
+@media screen and (max-width:1280px) {
+    .Header .Header__title p a span {
+        display: none;
+    }  
+}
+
+
+@media screen and (max-width: 1260px){
+    .Nav__body ul li a{
+        padding: 0 10px;
+
+    }
+        
+}
+
+@media  screen and (min-width:1200px) {
+    .menu li span{
+        display: none;
+    }
+}
+
+@media  screen and (max-width:1200px) {
+    .Header{
+    .Header__title{
+            margin: 10px;
+            p a{
+                height: 30px;
+            }
+            p img{
+                height: 30px;
+            }
+        }
+    }
+    .Main{
+        padding-top: 50px;
+        
+    }
+
+    .Nav__btn{
+        display: block;
+        a{
+            display: block;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            transition: 0.5s;
+
+            &.open{
+                background-color: var.$light-bule;
+                &::before{
+                    transform: rotate(-45deg);
+                    background-color: var.$white;
+                    top: 24px;
+                }
+                &::after{
+                    transform: rotate(-135deg);
+                    background-color: var.$white;
+                    top: 24px;
+                }
+                span{
+                    &::after{
+                        display: none;
+                    }
+                }    
+            }
+
+            &::before{
+                position: absolute;
+                top: 15px;
+                left: 14px;
+                content: "";
+                width: 23px;
+                height: 2px;
+                background-color: var.$light-bule;
+                transition: 0.2s;
+            }
+            span{
+                display: block;
+                overflow: hidden;
+                width: 1px;
+                height: 1px;
+                &::after{
+                    position: absolute;
+                    top: 24px;
+                    left: 14px;
+                    content: "";
+                    width: 23px;
+                    height: 2px;
+                    background-color: var.$light-bule;
+                }
+            }
+            &::after{
+                position: absolute;
+                bottom: 15px;
+                left: 14px;
+                content: "";
+                width: 23px;
+                height: 2px;
+                background-color: var.$light-bule;
+                transition: 0.2s;
+            }
+        }
+    }
+    .Nav__body{  
+        display: none;      
+        &.open{
+            display: block;
+        }
+
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background-color: var.$white;
+       
+        ul{
+            -webkit-box-orient: vertical; //flexboxとして設定、垂直
+            -webkit-box-direction: normal; //要素の配置を水平
+            flex-direction: column; //積み重なるように配置
+
+           li{
+                position: relative;
+
+                &.menu-item-has-children > a{
+                    &::before{
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: 13px;
+                        width: 24px;
+                        height: 2px;
+                        margin-top: -1px;
+                        background-color: var.$font;
+                        z-index: 9;
+
+                    }
+                    &::after{
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: 24px;
+                        width: 2px;
+                        height: 24px;
+                        margin-top: -12px;
+                        background-color: var.$font;
+                    }
+
+                }
+                a{
+                    position: relative;
+                    
+                
+                    &:visited{
+                        color: var.$font;
+
+                    }
+                    &:hover{
+                        background-color: var.$hover-light;
+                    }
+                    
+                }
+
+                &.menu-item-has-children.open > a{
+                    &::before{
+                        position: absolute;
+                        top: 50%;
+                    }
+                    &::after{
+                        display: none;
+                    }
+
+                }
+            }
+
+
+            li a{
+                height: auto;
+                padding: 10px;
+                &:active{
+                    background-color: #F3FAFB;
+                }
+            }
+
+            li.Nav__special{
+                display: none;
+            }
+        }
+    }
+    ul.sub-menu{
+        position: static;
+        li{
+            background-color: var.$white;
+            a{
+                padding: 10px 10px 10px 25px;
+            }
+        }
+    }
+   
+}
+
+@media screen and (max-width:1078px) {
+   
+    .Wrap.Wrap--wide{
+        margin: 0 10px;
+        width: 100%;
+    }
+    .Recommendation{
+        width: 100%;
+    }
+    .Recommendation__entry{
+        // margin: 0.2rem;
+        // justify-content: center;
+        width: 29.33%;
+        margin: 0 2%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .TopHead{
+        height: 100%;
+        padding-bottom: 320px;
+        background-position: center -25px;
+    
+        &__layer1{
+            // width: 100vw;
+            // width: calc(100%-);
+            background-size: cover;
+            -webkit-box-align: end;
+            align-items: flex-end;
+            background-position: center -30px;
+        }
+        &__body{
+            width: 100%;
+            min-width: 100%;
+            padding: 9px 0 13px;
+            border-radius: 0;
+            p{
+                margin: 0.4rem 0;
+                font-size: 13px;
+                &.Btn.Btn--big a{
+                    padding: 12px 18px;
+                    font-size: 16px;
+                }
+            }
+        }
+        &__title img{
+            display: none;
+        }
+        &__layer2{
+            background-size: cover;
+            background-position: center -25px;
+        }
+
+    }
+
+    // .Sec{
+    //     margin-top: 40px;
+    // }
+    .Wrap{
+        margin: 0 10px;
+        width: 100%;
+
+    }
+    .Recommendation{
+        justify-content: center;
+        margin-top: 0;
+        flex-direction: column;
+        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-box-align: center;
+        &__entry{
+            margin-bottom: 2.5rem;
+            width: auto;
+        }
+    }
+    
+}
+
+

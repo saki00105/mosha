@@ -1,0 +1,140 @@
+@use "variable" as var;
+
+.Main{
+    padding-top: 70px;
+}
+    
+.TopHead{
+    // box-sizing: border-box;
+    position: relative;
+    height: 650px;
+    overflow: hidden; //領域をはみ出した部分は表示しない
+
+    background: transparent url(../image/bg-hero3.png) no-repeat center center;
+    background-size:cover;
+    background-attachment: fixed;
+
+    &__layer{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    &__layer1{
+        display: flex;
+        align-items: flex-start;
+        // padding-top: 80px;
+        justify-content: center;
+        background: transparent url(../image/bg-hero1.png) no-repeat center center;
+        z-index: 200;
+    }
+
+    &__body{
+        max-width: 530px;
+        border-radius: 10px;
+        margin-top: 80px;
+        padding: 43px 40px 19px 40px;
+        background-color: var.$white;
+        text-align: center;
+        h1{
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            img{
+                width: 280px;
+                height: auto;
+            }
+        }
+        p{
+            margin: 1.3rem 0 0.5rem;
+            font-weight: 700;
+           
+            &.Btn.Btn--big a{
+                padding: 24px 37px;
+                font-size: 18px;
+                background-color: var.$light-bule;
+                border-color: var.$light-bule;
+                color: var.$white;
+
+                transition-property : all;
+                transition-duration: 500ms;
+            }
+        }
+    }
+    &__layer2{
+        background: transparent url(../image/bg-hero2.png) no-repeat center center;   
+        z-index: 100;
+    }
+}
+
+.Sec{
+    &.Sec--nallow{
+        padding: 4em 0;
+    }
+    &.Sec--black{
+        background-color: var.$black;
+    }
+    &.Sec--recommendation{
+        z-index: 500;
+    }
+}
+
+.Wrap{
+    margin: 0 auto;
+    max-width: 714px;
+    &--wide{
+        max-width: 1078px;
+    }
+}
+
+.Recommendation{
+    position: relative;
+    display: flex;
+    margin-top: -263px;
+    justify-content: center;
+    color: var.$white;
+    z-index: 1000;
+
+    &__entry{
+        margin: 0 50px;
+        width: 229px;
+    }
+
+    &__title{
+        text-align: center;
+        p{
+            margin: 0.2rem 0 0 0 ;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var.$white;
+        }
+    
+        .Recommendation__icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+            color: var.$black;
+            border: solid 6px var.$black;
+            border-radius: 50%;
+            background-color: var.$white;
+            font-size: 100px;
+            &::before{
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900 ;
+                content: "/f44b","/f201","/f1cd";
+            }
+        }
+    }
+    
+    &__body{
+        p{
+            margin: 0.5em 0 0 0 ;
+            line-height: 1.7;
+            font-weight: 700;
+        }
+    }
+}
+
